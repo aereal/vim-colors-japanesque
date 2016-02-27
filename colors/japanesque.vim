@@ -14,7 +14,7 @@ endif
 " Magenta:    桃   (#F596AA)
 " Green:      苗   (#86C166)
 " Dark Green: 鶯   (#6C6A2D)
-" Blue:       空   (#58B2DC)
+" Purple:     藤   (#8B81C3)
 " Yellow:     鬱金 (#EFBB24)
 
 " UI
@@ -56,10 +56,10 @@ highlight Constant   gui=none guifg=#F596AA
 highlight Statement  gui=none guifg=#6C6A2D
 highlight PreProc    gui=none guifg=#6C6A2D
 highlight Type       gui=none guifg=#efbb24
-highlight Identifier gui=none guifg=#58B2DC
+highlight Identifier gui=none guifg=#8B81C3
 highlight Conceal    gui=none guifg=#828282
 highlight Special    gui=none guifg=#EFBB24
-highlight Title      gui=none guifg=#58B2DC
+highlight Title      gui=none guifg=#8B81C3
 
 highlight default link Noise Conceal
 
