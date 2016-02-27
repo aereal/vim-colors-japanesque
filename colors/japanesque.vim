@@ -66,12 +66,12 @@ highlight default link Noise Conceal
 " Perl
 highlight default link perlVarPlain Identifier
 highlight default link perlVarPlain2 Identifier
-highlight default link perlStatementStorage Type
+highlight default link perlStatementStorage StorageClass
 highlight default link perlSharpBang Comment
 highlight default link perlStringStartEnd Conceal
 highlight default link perlMatchStartEnd Conceal
 highlight default link perlFunction Statement
-highlight default link perlSubName Identifier
+highlight default link perlSubName Function
 highlight default link perlOperator Operator
 highlight default link perlMethod Function
 highlight default link perlStatementInclude Include
