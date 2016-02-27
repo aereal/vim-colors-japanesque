@@ -69,8 +69,12 @@ highlight default link perlVarPlain2 Identifier
 highlight default link perlStatementStorage Type
 highlight default link perlSharpBang Comment
 highlight default link perlStringStartEnd Conceal
+highlight default link perlMatchStartEnd Conceal
 highlight default link perlFunction Statement
 highlight default link perlSubName Identifier
+highlight default link perlOperator Operator
+highlight default link perlMethod Function
+highlight default link perlStatementInclude Include
 
 " JavaScript
 highlight default link jsObjectKey Type
@@ -84,6 +88,7 @@ highlight default link htmlTagName Identifier
 " TT2
 highlight default link tt2_tag Conceal
 highlight default link tt2_bracket_r Conceal
+highlight default link tt2_operator Conceal
 
 " TypeScript
 highlight default link typescriptEndColons Conceal
