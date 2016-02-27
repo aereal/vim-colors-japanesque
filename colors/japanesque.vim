@@ -58,6 +58,7 @@ highlight Statement  gui=none guifg=#6C6A2D
 highlight PreProc    gui=none guifg=#6C6A2D
 highlight Type       gui=none guifg=#efbb24
 highlight Identifier gui=none guifg=#8B81C3
+highlight Function   gui=none guifg=#86C166
 highlight Conceal    gui=none guifg=#828282
 highlight Special    gui=none guifg=#EFBB24
 highlight Title      gui=none guifg=#8B81C3
