@@ -69,6 +69,8 @@ highlight default link perlVarPlain2 Identifier
 highlight default link perlStatementStorage Type
 highlight default link perlSharpBang Comment
 highlight default link perlStringStartEnd Conceal
+highlight default link perlFunction Statement
+highlight default link perlSubName Identifier
 
 " JavaScript
 highlight default link jsObjectKey Type
