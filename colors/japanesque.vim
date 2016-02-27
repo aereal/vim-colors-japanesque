@@ -40,7 +40,7 @@ highlight DiffText   gui=reverse guifg=fg guibg=#EFBB24
 
 if version >= 700
   highlight Cursor gui=reverse guifg=NONE guibg=NONE
-  highlight clear CursorLine
+  highlight CursorLine gui=none guibg=#2c2c2c
 
   highlight LineNr       gui=none guifg=#91989F
   highlight CursorLineNr gui=none guifg=#EFBB24
