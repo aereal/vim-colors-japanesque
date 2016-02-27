@@ -6,62 +6,82 @@ if exists('syntax_on')
   syntax reset
 endif
 
-" Black:      墨   (#1c1c1c)
-" White:      白練 (#ecf6f7)
-" Dark Gray:  灰   (#828282)
-" Gray:       銀鼠 (#91989F)
-" Red:        今様 (#D05A6E)
-" Magenta:    桃   (#F596AA)
-" Green:      苗   (#86C166)
-" Dark Green: 鶯   (#6C6A2D)
-" Purple:     藤   (#8B81C3)
-" Yellow:     鬱金 (#EFBB24)
+" 墨
+let s:black      = '#1c1c1c'
+" 白練
+let s:white      = '#ecf6f7'
+" 灰
+let s:dark_gray  = '#828282'
+" 銀鼠
+let s:gray       = '#91989F'
+" 今様
+let s:red        = '#D05A6E'
+" 桃
+let s:magenta    = '#F596AA'
+" 苗
+let s:green      = '#86C166'
+" 鶯
+let s:dark_green = '#6C6A2D'
+" 藤
+let s:purple     = '#8B81C3'
+" 鬱金
+let s:yellow     = '#EFBB24'
+
+
+function! s:hi(group, highlight_args) abort
+  if !has_key(a:highlight_args, 'gui')
+    let a:highlight_args.gui = 'none'
+  endif
+  let attrs = map(items(a:highlight_args), 'v:val[0] . "=" . v:val[1]')
+  let args = ['highlight', a:group] + attrs
+  execute join(args, ' ')
+endfunction
 
 " UI
-highlight NonText    gui=none guifg=#828282
-highlight Todo       gui=none guifg=#D05A6E guibg=NONE
-highlight Search     gui=reverse guifg=#EFBB24 guibg=NONE
-highlight SignColumn gui=none guifg=#ecf6f7 guibg=#1c1c1c
-highlight FoldColumn gui=none guifg=#ecf6f7 guibg=#1c1c1c
-highlight VertSplit  gui=none guifg=#828282 guibg=#828282
-highlight Error      gui=none guifg=#D05A6E guibg=NONE
-highlight ErrorMsg   gui=none guifg=#D05A6E guibg=NONE
-highlight WarningMsg gui=none guifg=#EFBB24
-highlight SpecialKey gui=none guifg=#6C6A2D
-highlight Visual     gui=reverse guifg=fg guibg=bg
-highlight Folded     gui=underline guifg=#6C6A2D guibg=bg
-highlight MoreMsg    gui=none guifg=#6C6A2D
-highlight Conceal    gui=none guifg=#828282
-highlight Question   gui=none guifg=#86C166
-highlight DiffAdd    gui=none guifg=fg guibg=#86C166
-highlight DiffDelete gui=none guifg=fg guibg=#D05A6E
-highlight DiffChange gui=none guifg=fg guibg=#EFBB24
-highlight DiffText   gui=reverse guifg=fg guibg=#EFBB24
-highlight MatchParen gui=none guibg=#EFBB24
+call s:hi('Normal',     { 'guifg': s:dark_gray })
+call s:hi('NonText',    { 'guifg': s:dark_gray })
+call s:hi('Todo',       { 'guifg': s:red, 'guibg': 'NONE' })
+call s:hi('Search',     { 'gui': 'reverse', 'guifg': s:yellow, 'guibg': 'NONE' })
+call s:hi('SignColumn', { 'guifg': s:white, 'guibg': s:black})
+call s:hi('FoldColumn', { 'guifg': s:white, 'guibg': s:black})
+call s:hi('VertSplit',  { 'guifg': s:dark_gray, 'guibg': s:dark_gray})
+call s:hi('Error',      { 'guifg': s:red, 'guibg': 'NONE'})
+call s:hi('ErrorMsg',   { 'guifg': s:red, 'guibg': 'NONE'})
+call s:hi('WarningMsg', { 'guifg': s:yellow})
+call s:hi('SpecialKey', { 'guifg': s:dark_green})
+call s:hi('Visual',     { 'gui': 'reverse', 'guifg': 'fg', 'guibg': 'bg'})
+call s:hi('Folded',     { 'gui': 'underline', 'guifg': s:dark_green, 'guibg': 'bg'})
+call s:hi('MoreMsg',    { 'guifg': s:dark_green})
+call s:hi('Conceal',    { 'guifg': s:dark_gray})
+call s:hi('Question',   { 'guifg': s:green})
+call s:hi('DiffAdd',    { 'guifg': 'fg', 'guibg': s:green})
+call s:hi('DiffDelete', { 'guifg': 'fg', 'guibg': s:red})
+call s:hi('DiffChange', { 'guifg': 'fg', 'guibg': s:yellow})
+call s:hi('DiffText',   { 'gui': 'reverse', 'guifg': 'fg', 'guibg': s:yellow})
+call s:hi('MatchParen', { 'guibg': s:yellow})
 
 if version >= 700
-  highlight Cursor gui=reverse guifg=NONE guibg=NONE
-  highlight CursorLine gui=none guibg=#2c2c2c
-
-  highlight LineNr       gui=none guifg=#91989F
-  highlight CursorLineNr gui=none guifg=#EFBB24
-  highlight Pmenu        gui=none guifg=#ecf6f7 guibg=#D05A6E
-  highlight PmenuSel     gui=none guifg=#ecf6f7 guibg=#828282
+  call s:hi('Cursor', { 'gui': 'reverse', 'guifg': 'NONE', 'guibg': 'NONE' })
+  call s:hi('CursorLine', { 'guibg': '#2c2c2c' })
+  call s:hi('LineNr',       { 'guifg': s:gray })
+  call s:hi('CursorLineNr', { 'guifg': s:yellow })
+  call s:hi('Pmenu',        { 'guifg': 'fg', 'guibg': s:red })
+  call s:hi('PmenuSel',     { 'guifg': 'fg', 'guibg': s:dark_gray })
 endif
 
 " Syntax
-highlight Normal     gui=none guifg=#ecf6f7 guibg=#1c1c1c
-highlight NonText    gui=none guifg=#828282
-highlight Comment    gui=none guifg=#91989F
-highlight Constant   gui=none guifg=#F596AA
-highlight Statement  gui=none guifg=#6C6A2D
-highlight PreProc    gui=none guifg=#6C6A2D
-highlight Type       gui=none guifg=#efbb24
-highlight Identifier gui=none guifg=#8B81C3
-highlight Function   gui=none guifg=#86C166
-highlight Conceal    gui=none guifg=#828282
-highlight Special    gui=none guifg=#EFBB24
-highlight Title      gui=none guifg=#8B81C3
+call s:hi('Normal',     { 'guifg': s:white, 'guibg': s:black })
+call s:hi('NonText',    { 'guifg': s:dark_gray })
+call s:hi('Comment',    { 'guifg': s:gray })
+call s:hi('Constant',   { 'guifg': s:magenta })
+call s:hi('Statement',  { 'guifg': s:dark_green })
+call s:hi('PreProc',    { 'guifg': s:dark_green })
+call s:hi('Type',       { 'guifg': s:yellow })
+call s:hi('Identifier', { 'guifg': s:purple })
+call s:hi('Function',   { 'guifg': s:green })
+call s:hi('Conceal',    { 'guifg': s:dark_gray })
+call s:hi('Special',    { 'guifg': s:yellow })
+call s:hi('Title',      { 'guifg': s:purple })
 
 highlight default link Noise Conceal
 
