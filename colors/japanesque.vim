@@ -37,6 +37,7 @@ highlight DiffAdd    gui=none guifg=fg guibg=#86C166
 highlight DiffDelete gui=none guifg=fg guibg=#D05A6E
 highlight DiffChange gui=none guifg=fg guibg=#EFBB24
 highlight DiffText   gui=reverse guifg=fg guibg=#EFBB24
+highlight MatchParen gui=none guibg=#EFBB24
 
 if version >= 700
   highlight Cursor gui=reverse guifg=NONE guibg=NONE
