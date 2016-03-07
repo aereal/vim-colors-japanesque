@@ -2,6 +2,8 @@
 
 The colorscheme featuring Japanese traditional colors.
 
+![palette](screenshots/palette.png)
+
 # Screenshots
 
 Ruby:
