@@ -6,10 +6,10 @@ if exists('syntax_on')
   syntax reset
 endif
 
-" 墨
-let s:black      = '#1c1c1c'
-" 白練
-let s:white      = '#ecf6f7'
+" 紫紺
+let s:black      = '#3C2F41'
+" 菜の花
+let s:white      = '#F7F1D5'
 " 灰
 let s:dark_gray  = '#828282'
 " 銀鼠
