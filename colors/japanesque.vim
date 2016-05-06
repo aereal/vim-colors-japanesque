@@ -38,7 +38,6 @@ function! s:hi(group, highlight_args) abort
 endfunction
 
 " UI
-call s:hi('Normal',     { 'guifg': s:dark_gray })
 call s:hi('NonText',    { 'guifg': s:dark_gray })
 call s:hi('Todo',       { 'guifg': s:red, 'guibg': 'NONE' })
 call s:hi('Search',     { 'gui': 'reverse', 'guifg': s:yellow, 'guibg': 'NONE' })
