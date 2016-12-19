@@ -61,7 +61,7 @@ call s:hi('DiffChange', { 'guifg': 'fg', 'guibg': s:yellow})
 call s:hi('DiffText',   { 'gui': 'reverse', 'guifg': 'fg', 'guibg': s:yellow})
 call s:hi('MatchParen', { 'guibg': s:yellow})
 
-if version >= 700
+if v:version >= 700
   call s:hi('Cursor', { 'gui': 'reverse', 'guifg': 'NONE', 'guibg': 'NONE' })
   call s:hi('CursorLine', { 'guibg': '#2c2c2c' })
   call s:hi('LineNr',       { 'guifg': s:gray })
