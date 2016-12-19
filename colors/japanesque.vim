@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 set background=dark
 highlight clear
 
@@ -32,7 +34,7 @@ function! s:hi(group, highlight_args) abort
   if !has_key(a:highlight_args, 'gui')
     let a:highlight_args.gui = 'none'
   endif
-  let attrs = map(items(a:highlight_args), 'v:val[0] . "=" . v:val[1]')
+  let attrs = map(items(a:highlight_args), "v:val[0] . '=' . v:val[1]")
   let args = ['highlight', a:group] + attrs
   execute join(args, ' ')
 endfunction
@@ -59,7 +61,7 @@ call s:hi('DiffChange', { 'guifg': 'fg', 'guibg': s:yellow})
 call s:hi('DiffText',   { 'gui': 'reverse', 'guifg': 'fg', 'guibg': s:yellow})
 call s:hi('MatchParen', { 'guibg': s:yellow})
 
-if version >= 700
+if v:version >= 700
   call s:hi('Cursor', { 'gui': 'reverse', 'guifg': 'NONE', 'guibg': 'NONE' })
   call s:hi('CursorLine', { 'guibg': '#2c2c2c' })
   call s:hi('LineNr',       { 'guifg': s:gray })
