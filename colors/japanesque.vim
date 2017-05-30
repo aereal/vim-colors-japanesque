@@ -34,6 +34,7 @@ function! s:hi(group, highlight_args) abort
   if !has_key(a:highlight_args, 'gui')
     let a:highlight_args.gui = 'none'
   endif
+  let a:highlight_args.cterm = a:highlight_args.gui
   let attrs = map(items(a:highlight_args), "v:val[0] . '=' . v:val[1]")
   let args = ['highlight', a:group] + attrs
   execute join(args, ' ')
