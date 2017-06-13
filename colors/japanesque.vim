@@ -80,7 +80,7 @@ call s:hi('PreProc',    { 'guifg': s:dark_green })
 call s:hi('Type',       { 'guifg': s:yellow })
 call s:hi('Identifier', { 'guifg': s:purple })
 call s:hi('Function',   { 'guifg': s:green })
-call s:hi('Conceal',    { 'guifg': s:dark_gray })
+call s:hi('Conceal',    { 'guifg': s:dark_gray, 'guibg': 'NONE' })
 call s:hi('Special',    { 'guifg': s:yellow })
 call s:hi('Title',      { 'guifg': s:purple })
 
